@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\pagestyle{empty}
+
+\usepackage{mathtools,amssymb,circuitikz}
+
+\usepackage[margin=0.3in]{geometry}
+
+\begin{document}
+
+    \section*{Bipolo}
+
+        \begin{minipage}[t]{.3\textwidth}
+            \vspace{-\baselineskip}
+
+            \subsection*{Utilizzatori}
+
+                \begin{minipage}[t]{.2\textwidth}
+                    \vspace{-\baselineskip}
+
+                    \input{circuiti/utilizzatori}
+                \end{minipage}
+                \hfill
+                \begin{minipage}[t]{.8\textwidth}
+                    \vspace{-\baselineskip}
+
+                    \begin{align*}
+                        &V = R \times I \; [\mathrm{V}]\\
+                        &P_{Ass} = V \times I \; [\mathrm{W}]\\
+                        &P_{Ero} = - V \times I \; [\mathrm{W}]
+                    \end{align*}
+                \end{minipage}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.3\textwidth}
+            \vspace{-\baselineskip}
+
+            \subsection*{Generatori}
+            
+                \begin{minipage}[t]{.2\textwidth}
+                    \vspace{-\baselineskip}
+
+                    \input{circuiti/generatori}
+                \end{minipage}
+                \hfill
+                \begin{minipage}[t]{.8\textwidth}
+                    \vspace{-\baselineskip}
+
+                    \begin{align*}
+                        &V = - R \times I \; [\mathrm{V}]\\
+                        &P_{Ass} = - V \times I \; [\mathrm{W}]\\
+                        &P_{Ero} = V \times I \; [\mathrm{W}]
+                    \end{align*}
+                \end{minipage}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.3\textwidth}
+            \vspace{-\baselineskip}
+
+            \subsection*{Teorema di Tellegen}
+
+                \[
+                    \sum_n V_n \times I_n = 0
+                \]
+
+        \end{minipage}
+
+    \section*{Partitori}
+
+        \begin{minipage}[t]{.5\textwidth}
+
+            \begin{minipage}[t]{.5\textwidth}
+                \vspace{-\baselineskip}
+
+                \centering\input{circuiti/partitoreCorrente}
+                \[
+                    I_1 = I \times \frac{R_2}{R_1 + R_2}
+                \]
+    
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{.5\textwidth}
+                \vspace{-\baselineskip}
+    
+                \centering\input{circuiti/partitoreTensione}
+                \[
+                    V_ 1 = V \times \frac{R_2}{R_1 + R_2}
+                \]
+
+            \end{minipage}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.5\textwidth}
+            \vspace{-\baselineskip}
+
+            \textbf{Nota}: Dovre è presente una maggiore resistenza, sarà\\
+            presente una minore intensità di corrente ed una maggiore\\
+            tensione.
+
+            \smallskip
+
+            \begin{tabular}{ c | c | c |}
+                \cline{2-3}
+                & \textbf{Serie} & \textbf{Parallelo}\\
+                \hline
+                \multicolumn{1}{ | c | }{\textbf{Corrente}} & \(I = I_1 = \dots = I_n\) & \(I = \sum_n I_n\)\\
+                \hline
+                \multicolumn{1}{ | c | }{\textbf{Tensione}} & \(V = \sum_n V_n\) & \(V = V_1 = \dots = V_n\)\\
+                \hline
+            \end{tabular}
+
+        \end{minipage}
+
+\end{document}
