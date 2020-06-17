@@ -62,7 +62,7 @@
             \subsection*{Teorema di Tellegen}
 
                 \[
-                    \sum_n V_n \times I_n = 0
+                    \sum V_n \times I_n = 0
                 \]
 
         \end{minipage}
@@ -108,12 +108,84 @@
                 \cline{2-3}
                 & \textbf{Serie} & \textbf{Parallelo}\\
                 \hline
-                \multicolumn{1}{ | c | }{\textbf{Corrente}} & \(I = I_1 = \dots = I_n\) & \(I = \sum_n I_n\)\\
+                \multicolumn{1}{ | c | }{\textbf{Corrente}} & \(I = I_1 = \ldots = I_n\) & \(I = \sum I_n\)\\
                 \hline
-                \multicolumn{1}{ | c | }{\textbf{Tensione}} & \(V = \sum_n V_n\) & \(V = V_1 = \dots = V_n\)\\
+                \multicolumn{1}{ | c | }{\textbf{Tensione}} & \(V = \sum V_n\) & \(V = V_1 = \ldots = V_n\)\\
                 \hline
             \end{tabular}
 
         \end{minipage}
+
+    \medskip
+
+    \hspace{-.6cm} % Per allineare i titoli
+    \begin{minipage}[t]{.3\textwidth}
+        
+        \section*{Trasformazioni}
+
+            \subsection*{Stella \(\rightarrow\) triangolo}
+
+                \[
+                    G_{12} = \frac{G_1 \times G_2}{\sum G_n}
+                \]
+
+                \subsection*{Triangolo \(\rightarrow\) stella}
+
+                \[
+                    R_1 = \frac{R_{12} \times R_{13}}{\sum R_n}
+                \]
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.7\textwidth}
+        
+        \section*{Equivalenti}
+
+            \begin{minipage}[t]{.5\textwidth}
+                
+                \subsection*{Thévenin}
+
+                    \begin{minipage}[t]{.3\textwidth}
+                        \vspace{-\baselineskip}
+
+                        \input{circuiti/thevenin.tex}
+
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{.7\textwidth}
+                        %\vspace{-\baselineskip}
+
+                        \begin{align*}
+                            &V_{Eq} = V_{CA}\\
+                            &R_{Eq} = \frac{1}{G_{Eq}}
+                        \end{align*}
+
+                    \end{minipage}
+
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{.5\textwidth}
+                
+                \subsection*{Norton}
+
+                    \begin{minipage}[t]{.3\textwidth}
+                        \vspace{-\baselineskip}
+
+                        \input{circuiti/norton.tex}
+
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{.7\textwidth}
+                        %\vspace{-\baselineskip}
+
+                        \begin{align*}
+                            &I_{Eq} = I_{CC}\\
+                            &R_{Eq} = \frac{1}{G_{Eq}}
+                        \end{align*}
+
+                    \end{minipage}
+
+            \end{minipage}
+
+    \end{minipage}
 
 \end{document}
