@@ -4,7 +4,7 @@
 
 \usepackage{mathtools,amssymb,circuitikz}
 
-\usepackage[margin=0.3in]{geometry}
+\usepackage[margin=.2in]{geometry}
 
 \begin{document}
 
@@ -120,8 +120,9 @@
 
     \hspace{-.6cm} % Per allineare i titoli
     \begin{minipage}[t]{.3\textwidth}
-        
+
         \section*{Trasformazioni}
+            \vspace{-.2cm}
 
             \subsection*{Stella \(\rightarrow\) triangolo}
 
@@ -129,11 +130,12 @@
                     G_{12} = \frac{G_1 \times G_2}{\sum G_n}
                 \]
 
-                \subsection*{Triangolo \(\rightarrow\) stella}
+            \subsection*{Triangolo \(\rightarrow\) stella}
 
                 \[
                     R_1 = \frac{R_{12} \times R_{13}}{\sum R_n}
                 \]
+
     \end{minipage}
     \hfill
     \begin{minipage}[t]{.7\textwidth}
@@ -141,6 +143,7 @@
         \section*{Equivalenti}
 
             \begin{minipage}[t]{.5\textwidth}
+                \vspace{-\baselineskip}
                 
                 \subsection*{Thévenin}
 
@@ -164,6 +167,7 @@
             \end{minipage}
             \hfill
             \begin{minipage}[t]{.5\textwidth}
+                \vspace{-\baselineskip}
                 
                 \subsection*{Norton}
 
@@ -187,5 +191,50 @@
             \end{minipage}
 
     \end{minipage}
+
+    \section*{Trasformatore ideale}
+
+        \begin{minipage}[t]{.1\textwidth}
+            \vspace{-\baselineskip}
+
+            \input{circuiti/trasformatore1}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.1\textwidth}
+            \vspace{-\baselineskip}
+            \vspace{.4cm}
+
+            \begin{align*}
+                &V_1 = n \times V_2\\
+                &I_1 = -\frac{1}{n} \times V_2
+            \end{align*}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.1\textwidth}
+            \vspace{-\baselineskip}
+
+            \input{circuiti/trasformatore2}
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.1\textwidth}
+            %\vspace{-\baselineskip}
+            \vspace{.3cm}
+
+            \[
+                z_{AB} = n^2 \times z \qquad \iff
+            \]
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.1\textwidth}
+            \vspace{-\baselineskip}
+            \vspace{.7cm}
+
+            \input{circuiti/trasformatore3}
+
+        \end{minipage}
 
 \end{document}

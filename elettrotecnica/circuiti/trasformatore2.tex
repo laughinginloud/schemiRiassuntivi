@@ -1,0 +1,23 @@
+\begin{circuitikz}[scale=.75, every node/.style={scale=.75}]
+    \draw
+    (0,0) node[transformer] (T) {}
+    node[ocirc] (A) at ([xshift=-1cm]T.A1) {}
+    node[ocirc] (B) at ([xshift=-1cm]T.A2) {}
+    node[ocirc] (C) at ([xshift=1cm]T.B1) {}
+    node[ocirc] (D) at ([xshift=1cm]T.B2) {}
+    %node[circ] (E) at ([xshift=0.4cm,yshift=-5pt]T.A1) {}
+    %node[circ] (F) at ([xshift=-0.4cm,yshift=-5pt]T.B1) {}
+    (T.A1) to[short, -o] (A)
+    (T.A2) to [short, -o] (B) 
+    (T.B1) to[short] (C)
+    (T.B2) to [short] (D)
+    (C) to[generic, l=\(z\)] (D)
+    ;
+    \begin{scope}[shorten >= 10pt,shorten <= 10pt,]
+    \draw[<-] (A) -- node[left] {$V_1$} (B);
+    \draw[<-] ($(C)-(1,0)$) -- node[right] {$V_2$} ($(D)-(1,0)$);
+    \draw[<->] ([xshift=7pt]T.north west) to[bend left] node[above] {$n:1$} ([xshift=-7pt]T.north east);
+    \end{scope}
+    \draw[->] ([xshift=-0.9cm,yshift=10pt]T.A1) -- node[above] {$I_1$} +(20pt,0);
+    \draw[->] ([xshift=0.9cm,yshift=10pt]T.B1) -- node[above] {$I_2$} +(-20pt,0);
+\end{circuitikz}
