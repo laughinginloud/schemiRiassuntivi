@@ -436,6 +436,7 @@
     \newpage
 
     \section*{Analisi nodale}
+    \vspace{-1.5\baselineskip}
 
         \begin{multicols}{2}
             
@@ -465,7 +466,17 @@
 
         \end{multicols}
 
+        \vspace{-\baselineskip}
         \textbf{Nota}: Ogni generatore si deve presentare due volte con segno opposto nel vettore dei termini noti od una sola volta
         se collegato al nodo di riferimento.
+
+    \vspace{-1.5\baselineskip}
+    \section*{Regime alternato sinusoidale}
+    \vspace{-1.5\baselineskip}
+
+        \begin{gather*}
+            v(t) = \underbrace{A}_{\text{ampiezza}} \times \cos (\underbrace{\omega}_{\text{pulsazione}} t + \underbrace{\varphi}_{\text{fase}}) \iff \underbrace{\overline{V}}_{\text{fasore}} = \underbrace{A}_{\text{ampiezza}} \times e^{j \overbrace{\varphi}^{\text{fase}}} = a + jb\\
+            \underbrace{\omega}_{\text{pulsazione}} = 2 \pi \underbrace{\nu}_{\text{frequenza}} \qquad A = \sqrt{a^2 + b^2} \qquad \phi = \arctan{\frac{b}{a}} \qquad \text{\textbf{Nota}: attenzione al quadrante.} \qquad \text{\textbf{Nota}: } \overline{V} \in \mathbb{C}.
+        \end{gather*}
 
 \end{document}
