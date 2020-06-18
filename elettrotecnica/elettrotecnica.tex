@@ -477,7 +477,47 @@
         \begin{gather*}
             v(t) = \underbrace{A}_{\text{ampiezza}} \times \cos (\underbrace{\omega}_{\text{pulsazione}} t + \underbrace{\varphi}_{\text{fase}}) \iff \underbrace{\overline{V}}_{\text{fasore}} = \underbrace{A}_{\text{ampiezza}} \times e^{j \overbrace{\varphi}^{\text{fase}}} = a + jb\\
             \underbrace{\omega}_{\text{pulsazione}} = 2 \pi \underbrace{\nu}_{\text{frequenza}} \qquad A = \sqrt{a^2 + b^2} \qquad \phi = \arctan{\frac{b}{a}} \qquad \text{\textbf{Nota}: attenzione al quadrante.} \qquad \text{\textbf{Nota}: } \overline{V} \in \mathbb{C}.\\
-            \underbrace{Z}_{impedenza} = \underbrace{R}_{\text{resistenza}} + j \underbrace{X}_{\text{reattanza}} \qquad \underbrace{Y}_{\text{ammettenza}} = \underbrace{R}_{\text{conduttanza}} + j \underbrace{B}_{\text{suscettanza}} \qquad \measuredangle Z = - \measuredangle Y
+            \underbrace{Z}_{\text{impedenza}} = \underbrace{R}_{\text{resistenza}} + j \underbrace{X}_{\text{reattanza}} \qquad \underbrace{Y}_{\text{ammettenza}} = \underbrace{R}_{\text{conduttanza}} + j \underbrace{B}_{\text{suscettanza}} \qquad \measuredangle Z = - \measuredangle Y
         \end{gather*}
+
+    \vspace{-1.5\baselineskip}
+    \section*{Resistori, condensatori ed induttori in RAS}
+    \vspace{-1.5\baselineskip}
+
+        \begin{multicols}{4}
+            
+            \subsection*{Resisori}
+
+                \begin{align*}
+                    &Z_R = R\\
+                    &Y_R = \frac{1}{R}
+                \end{align*}
+
+            \vfill\null
+            \columnbreak
+
+            \subsection*{Condensatori}
+
+                \begin{align*}
+                    &Z_C = \frac{1}{j \omega C} = - \frac{1}{\omega C} \times j\\
+                    &Y_C = j \omega C
+                \end{align*}
+
+            \vfill\null
+            \columnbreak
+
+            \subsection*{Induttori}
+
+                \begin{align*}
+                    &Z_L = j \omega L\\
+                    &Y_L = \frac{1}{j \omega L} = -\frac{1}{\omega L} \times j
+                \end{align*}
+
+            \vfill\null
+            \columnbreak
+
+            \noindent L'\textbf{immettenza} è un\\termine generico per indicare l'impedenza o l'ammettenza.
+
+        \end{multicols}
 
 \end{document}
