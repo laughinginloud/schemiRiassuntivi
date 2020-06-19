@@ -520,4 +520,19 @@
 
         \end{multicols}
 
+    \vspace{-1.5\baselineskip}
+    \section*{Potenza in RAS}
+    \vspace{-1.5\baselineskip}
+
+        \begin{gather*}
+            \underbrace{S}_{\text{potenza complessa } [VA]} = \underbrace{P}_{\text{potenza attiva } [W]} + j \underbrace{Q}_{\text{potenza reattiva } [VAR]} \qquad
+                S =
+                    \begin{cases}
+                        \overline{V}_{Eff} \times \overline{I}^*_{Eff}\\
+                        \frac{1}{2} \times \overline{V} \times \overline{I}^*
+                    \end{cases}
+                \qquad \overline{V}_{Eff} = \frac{\overline{V}}{\sqrt{2}} \quad \overline{I}_{Eff} = \frac{\overline{I}}{\sqrt{2}}\\
+                S = |S| \times \underbrace{\cos \varphi}_{\text{fattore di potenza}} + j |S| \times \sin \varphi \qquad \cos \varphi = \frac{P}{|S|} \qquad \text{Notiamo che } \measuredangle \, \overline{I} = - \measuredangle \, \overline{I}^* \text{, quindi } \varphi = \varphi_{Tensione} - \varphi_{Corrente}
+        \end{gather*}
+
 \end{document}
