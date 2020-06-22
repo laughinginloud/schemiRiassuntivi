@@ -6,6 +6,8 @@
 
 \usepackage[margin=.2in]{geometry}
 
+\renewcommand{\deg}{^{\circ}}
+
 \begin{document}
 
     \section*{Bipolo}
@@ -520,7 +522,7 @@
 
         \end{multicols}
 
-    \vspace{-1.5\baselineskip}
+    \vspace{-3\baselineskip}
     \section*{Potenza in RAS}
     \vspace{-1.5\baselineskip}
 
@@ -532,7 +534,30 @@
                         \frac{1}{2} \times \overline{V} \times \overline{I}^*
                     \end{cases}
                 \qquad \overline{V}_{Eff} = \frac{\overline{V}}{\sqrt{2}} \quad \overline{I}_{Eff} = \frac{\overline{I}}{\sqrt{2}}\\
-                S = |S| \times \underbrace{\cos \varphi}_{\text{fattore di potenza}} + j |S| \times \sin \varphi \qquad \cos \varphi = \frac{P}{|S|} \qquad \text{Notiamo che } \measuredangle \, \overline{I} = - \measuredangle \, \overline{I}^* \text{, quindi } \varphi = \varphi_{Tensione} - \varphi_{Corrente}
-        \end{gather*}
+                S = |S| \times \underbrace{\cos \varphi}_{\text{fattore di potenza}} + j |S| \times \sin \varphi \qquad \cos \varphi = \frac{P}{|S|} \qquad \text{Notiamo che } \measuredangle \, \overline{I} = - \measuredangle \, \overline{I}^* \text{, quindi } \varphi = \varphi_{Tensione} - \varphi_{Corrente}\\
+                \text{\textbf{Massimo trasferimento di potenza: }} Z_{Sorgente} = Z^*_{Carico}
+            \end{gather*}
+
+    \vspace{-2\baselineskip}
+    \section*{Bipoli passivi}
+    \vspace{-1.5\baselineskip}
+
+        \begin{multicols}{2}
+
+            \begin{itemize}
+                \item Bipoli passivi: \(R \geqslant 0,\, G \geqslant 0,\, P \geqslant 0,\, -90\deg \leqslant \varphi \leqslant 90\deg\)
+                \item Bipoli resistivi: \(X=B=0,\, Q=0,\, \varphi=0\deg\)
+                \item Bipoli reattivi: \(R=G=0,\, P=0,\, \varphi=\pm90\deg\)
+            \end{itemize}
+
+            \vfill\null
+            \columnbreak
+
+            \begin{itemize}
+                \item Bipoli induttivi: \(X > 0,\, B<0,\, Q>0,\, 0\deg < \varphi \leqslant 90\deg\)
+                \item Bipoli capacitivi: \(X<0,\, B>0,\, Q<0,\, -90\deg \leqslant \varphi < 0\deg\)
+            \end{itemize}
+
+        \end{multicols}
 
 \end{document}
