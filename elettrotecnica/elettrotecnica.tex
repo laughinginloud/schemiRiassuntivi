@@ -533,7 +533,7 @@
     \vspace{-1.5\baselineskip}
 
         \begin{gather*}
-            \underbrace{S}_{\text{potenza complessa } [VA]} = \underbrace{P}_{\text{potenza attiva } [W]} + j \underbrace{Q}_{\text{potenza reattiva } [VAR]} \qquad
+            \underbrace{S}_{\text{potenza complessa [VA]}} = \underbrace{P}_{\text{potenza attiva [W]}} + j \underbrace{Q}_{\text{potenza reattiva [VAR]}} \qquad
                 S =
                     \begin{cases}
                         \overline{V}_{Eff} \times \overline{I}^*_{Eff}\\
@@ -589,6 +589,36 @@
             \underbrace{k}_{\text{coefficiente di accoppiamento}} = \frac{|M|}{\sqrt{L_1 L_2}}
         \]
 
+    \vspace{-1.5\baselineskip}
+    \subsection*{Transitorio}
+    \vspace{-1.5\baselineskip}
 
+        \begin{multicols}{3}
+            
+            Esponenziale
+            \begin{itemize}
+                \item \(i_L (t) = I_{L \infty} + (i_{L0} - i_{L\infty}) \times e^{-\frac{t}{\tau}}\)
+                \item \(v_C (t) = v_{C \infty} + (v_{C 0} - v_{C \infty}) \times e^{-\frac{t}{\tau}}\)
+            \end{itemize}
+
+            \vfill\null
+            \columnbreak
+
+            Rampa
+            \begin{itemize}
+                \item \(i_L (t) = \frac{V_L}{L} (t - T_0) + I_{L0}\)
+                \item \(v_C (t) = \frac{I_C}{C} (t - T_0) + V_{C0}\)
+            \end{itemize}
+
+            \vfill\null
+            \columnbreak
+
+            \[
+                \tau_L = LG = \frac{L}{R}
+                \qquad\qquad
+                \tau_C = RC
+            \]
+
+        \end{multicols}
 
 \end{document}
