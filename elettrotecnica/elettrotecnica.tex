@@ -478,7 +478,7 @@
         \textbf{Nota}: Ogni generatore si deve presentare due volte con segno opposto nel vettore dei termini noti od una sola volta
         se collegato al nodo di riferimento.
 
-    \vspace{-1.5\baselineskip}
+    \vspace{-\baselineskip}
     \subsection*{Regime alternato sinusoidale}
     \vspace{-1.5\baselineskip}
 
@@ -620,5 +620,44 @@
             \]
 
         \end{multicols}
+
+    \vspace{-3\baselineskip}
+    \subsection*{Circuiti magnetici}
+    \vspace{-1.5\baselineskip}
+
+        \begin{gather*}
+            \Psi_B \text{: flusso attraveso la sezione} \qquad\qquad \phi_B \text{: flusso concatenato con l'avvolgimento} \qquad\qquad v = L \, \dv{i}{t} \qquad \Phi_B = L I \rightarrow v = \dv{\phi_B}{t}\\
+            \Phi_B = n \, \Psi_B \qquad \mathfrak{R} = \frac{l}{S \mu} \qquad \mu \text{: permeabilità magnetica} \qquad \mathcal{F} = \mathfrak{R} \, \Psi_B \qquad \text{Equivalente ad un generatore di tenzione con } V_{Eq} = n \, I
+        \end{gather*}
+
+    \vspace{-1.5\baselineskip}
+    \subsection*{Induzione magnetica}
+
+        \begin{minipage}[t]{.4\textwidth}
+            \vspace{-2cm}
+
+            \begin{enumerate}
+                \item Prendo il verso della sorgente come positivo
+                \item LKT a sinistra dell'uguale
+                \item Alla destra dell'uguale \(\rightarrow + \dv{\phi}{t}\)
+            \end{enumerate}
+
+        \end{minipage}
+        \hspace{2cm}
+        \begin{minipage}[t]{.1\textwidth}
+            \vspace{-1.75cm}
+
+            Esempio: 
+            \[
+                E - R \, I = \dv{\phi}{t}
+            \]
+
+        \end{minipage}
+        \hspace{2cm}
+        \begin{minipage}[t]{.1\textwidth}
+
+            \input{circuiti/induzione}
+
+        \end{minipage}
 
 \end{document}
