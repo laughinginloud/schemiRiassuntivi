@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 
 \pagestyle{empty}
 
@@ -559,5 +559,28 @@
             \end{itemize}
 
         \end{multicols}
+
+    \vspace{-3.5\baselineskip}
+    \section*{Induttori mutuamente accoppiati}
+
+        \[
+            \text{Tempo:}
+            \left\{
+                \begin{gathered}
+                    v_1 (t) = L_1 \dv{i_1 (t)}{t} + M \dv{i_2 (t)}{t}\\
+                    v_2 (t) = M \dv{i_1 (t)}{t} + L_2 \dv{i_2 (t)}{t}
+                \end{gathered}
+            \right.
+            \iff
+            \text{Fasori:}
+            \left\{
+                \begin{gathered}
+                    \overline{V}_1 = j \omega L_1 \overline{I}_1 + j \omega M \overline{I}_2\\
+                    \overline{V}_2 = j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
+                \end{gathered}
+            \right.
+            \qquad\qquad
+            \underbrace{k}_{\text{coefficiente di accoppiamento}} = \frac{|M|}{\sqrt{L_1 L_2}}
+        \]
 
 \end{document}
