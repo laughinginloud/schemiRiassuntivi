@@ -484,7 +484,7 @@
 
         \begin{gather*}
             v(t) = \underbrace{A}_{\text{ampiezza}} \times \cos (\underbrace{\omega}_{\text{pulsazione}} t + \underbrace{\varphi}_{\text{fase}}) \iff \underbrace{\overline{V}}_{\text{fasore}} = \underbrace{A}_{\text{ampiezza}} \times e^{j \overbrace{\varphi}^{\text{fase}}} = a + jb\\
-            \underbrace{\omega}_{\text{pulsazione}} = 2 \pi \underbrace{\nu}_{\text{frequenza}} \qquad A = \sqrt{a^2 + b^2} \qquad \phi = \arctan{\frac{b}{a}} \qquad \text{\textbf{Nota}: attenzione al quadrante.} \qquad \text{\textbf{Nota}: } \overline{V} \in \mathbb{C}.\\
+            \underbrace{\omega}_{\text{pulsazione}} = 2 \pi \underbrace{\nu}_{\text{frequenza}} \qquad A = \sqrt{a^2 + b^2} \qquad \Phi = \arctan{\frac{b}{a}} \qquad \text{\textbf{Nota}: attenzione al quadrante.} \qquad \text{\textbf{Nota}: } \overline{V} \in \mathbb{C}.\\
             \underbrace{Z}_{\text{impedenza}} = \underbrace{R}_{\text{resistenza}} + j \underbrace{X}_{\text{reattanza}} \qquad \underbrace{Y}_{\text{ammettenza}} = \underbrace{R}_{\text{conduttanza}} + j \underbrace{B}_{\text{suscettanza}} \qquad \measuredangle Z = - \measuredangle Y
         \end{gather*}
 
@@ -626,7 +626,7 @@
     \vspace{-1.5\baselineskip}
 
         \begin{gather*}
-            \Psi_B \text{: flusso attraveso la sezione} \qquad\qquad \phi_B \text{: flusso concatenato con l'avvolgimento} \qquad\qquad v = L \, \dv{i}{t} \qquad \Phi_B = L I \rightarrow v = \dv{\phi_B}{t}\\
+            \Psi_B \text{: flusso attraveso la sezione} \qquad\qquad \Phi_B \text{: flusso concatenato con l'avvolgimento} \qquad\qquad v = L \, \dv{i}{t} \qquad \Phi_B = L I \rightarrow v = \dv{\Phi_B}{t}\\
             \Phi_B = n \, \Psi_B \qquad \mathfrak{R} = \frac{l}{S \mu} \qquad \mu \text{: permeabilità magnetica} \qquad \mathcal{F} = \mathfrak{R} \, \Psi_B \qquad \text{Equivalente ad un generatore di tensione con } V_{Eq} = n \, I
         \end{gather*}
 
@@ -639,7 +639,7 @@
             \begin{enumerate}
                 \item Prendo il verso della sorgente come positivo
                 \item LKT a sinistra dell'uguale
-                \item Alla destra dell'uguale \(\rightarrow + \dv{\phi}{t}\)
+                \item Alla destra dell'uguale \(\rightarrow + \dv{\Phi}{t}\)
             \end{enumerate}
 
         \end{minipage}
@@ -649,7 +649,7 @@
 
             Esempio: 
             \[
-                E - R \, I = \dv{\phi}{t}
+                E - R \, I = \dv{\Phi}{t}
             \]
 
         \end{minipage}
