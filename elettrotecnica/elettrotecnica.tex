@@ -7,6 +7,7 @@
 \usepackage[margin=.2in]{geometry}
 
 \renewcommand{\deg}{^{\circ}}
+\newcommand{\unit}[1]{\left[\mathbf{#1}\right]}
 
 \begin{document}
 
@@ -27,9 +28,9 @@
                     \vspace{-1.5\baselineskip}
 
                     \begin{align*}
-                        &V = R \times I \; [\mathrm{V}]\\
-                        &P_{Ass} = V \times I \; [\mathrm{W}]\\
-                        &P_{Ero} = - V \times I \; [\mathrm{W}]
+                        &V = R \times I \; \unit{V}\\
+                        &P_{Ass} = V \times I \; \unit{W}\\
+                        &P_{Ero} = - V \times I \; \unit{W}
                     \end{align*}
                 \end{minipage}
 
@@ -50,9 +51,9 @@
                     \vspace{-1.5\baselineskip}
 
                     \begin{align*}
-                        &V = - R \times I \; [\mathrm{V}]\\
-                        &P_{Ass} = - V \times I \; [\mathrm{W}]\\
-                        &P_{Ero} = V \times I \; [\mathrm{W}]
+                        &V = - R \times I \; \unit{V}\\
+                        &P_{Ass} = - V \times I \; \unit{W}\\
+                        &P_{Ero} = V \times I \; \unit{W}
                     \end{align*}
                 \end{minipage}
 
@@ -65,6 +66,14 @@
 
                 \[
                     \sum V_n \times I_n = 0
+                \]
+
+            \vspace{-\baselineskip}
+
+            \subsubsection*{Carica di un condensatore}
+
+                \[
+                    W(t_0, t_1) = \frac{1}{2} C \left[v^2 (t_1) - v^2 (t_0)\right] \; \unit{mJ}
                 \]
 
         \end{minipage}
@@ -393,7 +402,7 @@
         variabili controllate sia diverso da zero.
 
     \vspace{-\baselineskip}
-    \subsection*{Induttori e generatori}
+    \subsection*{Induttori e condensatori}
 
         \begin{minipage}[t]{.03\textwidth}
             \vspace{-\baselineskip}
@@ -407,7 +416,7 @@
             
             \begin{align*}
                 V_L &= L \times \dv{i_L (t)}{t}\\
-                [L] &= [H]
+                [L] &= \unit{H}
             \end{align*}
 
         \end{minipage}
@@ -424,7 +433,7 @@
             
             \begin{align*}
                 \qquad I_C &= C \times \dv{v_C (t)}{t}\\
-                \qquad [C] &= [F]
+                \qquad [C] &= \unit{F}\\
             \end{align*}
 
         \end{minipage}
@@ -455,7 +464,7 @@
         \subsection*{Generatori trifase}
     
             \[
-                |\overline{V}_L| = \sqrt{3} V_{Fase} \qquad |\overline{I}_L| = \sqrt{3} I_{Fase} \qquad V_{Fase} = |\overline{E}_1| \qquad I_{Fase} = |\overline{I}_{f31}|
+                \abs{\overline{V}_L} = \sqrt{3} V_{Fase} \qquad \abs{\overline{I}_L} = \sqrt{3} I_{Fase} \qquad V_{Fase} = \abs{\overline{E}_1} \qquad I_{Fase} = \abs{\overline{I}_{f31}}
             \]
     \end{minipage}
     \hfill
@@ -583,8 +592,8 @@
                         \frac{1}{2} \times \overline{V} \times \overline{I}^*
                     \end{cases}
                 \quad \overline{V}_{Eff} = \frac{\overline{V}}{\sqrt{2}} \quad \overline{I}_{Eff} = \frac{\overline{I}}{\sqrt{2}}\\
-                S = |S| \times \underbrace{\cos \varphi}_{\text{fattore di potenza}} + j |S| \times \sin \varphi \qquad \cos \varphi = \frac{P}{|S|} \qquad \text{Notiamo che } \measuredangle \, \overline{I} = - \measuredangle \, \overline{I}^* \text{, quindi } \varphi = \varphi_{Tensione} - \varphi_{Corrente}\\
-                \qquad\quad\textbf{Massimo trasferimento di potenza: } Z_{Sorgente} = Z^*_{Carico} \qquad \textbf{Potenza apparente: } |S| = V_{Eff} \times I_{Eff} \text{ [VA]}
+                S = \abs{S} \times \underbrace{\cos \varphi}_{\text{fattore di potenza}} + j \abs{S} \times \sin \varphi \qquad \cos \varphi = \frac{P}{\abs{S}} \qquad \text{Notiamo che } \measuredangle \, \overline{I} = - \measuredangle \, \overline{I}^* \text{, quindi } \varphi = \varphi_{Tensione} - \varphi_{Corrente}\\
+                \qquad\quad\textbf{Massimo trasferimento di potenza: } Z_{Sorgente} = Z^*_{Carico} \qquad \textbf{Potenza apparente: } \abs{S} = V_{Eff} \times I_{Eff} \text{ [VA]}
             \end{gather*}
 
     \vspace{-2\baselineskip}
@@ -626,7 +635,7 @@
                 \end{gathered}
             \right.
             \qquad\qquad
-            \underbrace{k}_{\text{coefficiente di accoppiamento}} = \frac{|M|}{\sqrt{L_1 L_2}}
+            \underbrace{k}_{\text{coefficiente di accoppiamento}} = \frac{\abs{M}}{\sqrt{L_1 L_2}}
         \]
 
     \vspace{-1.5\baselineskip}
