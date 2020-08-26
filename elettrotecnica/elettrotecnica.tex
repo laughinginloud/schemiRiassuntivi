@@ -28,9 +28,9 @@
                     \vspace{-1.5\baselineskip}
 
                     \begin{align*}
-                        &V = R \times I \; \unit{V}\\
-                        &P_{Ass} = V \times I \; \unit{W}\\
-                        &P_{Ero} = - V \times I \; \unit{W}
+                        V &= R \times I \; \unit{V}\\
+                        P_{Ass} &= V \times I \; \unit{W}\\
+                        P_{Ero} &= - V \times I \; \unit{W}
                     \end{align*}
                 \end{minipage}
 
@@ -51,9 +51,9 @@
                     \vspace{-1.5\baselineskip}
 
                     \begin{align*}
-                        &V = - R \times I \; \unit{V}\\
-                        &P_{Ass} = - V \times I \; \unit{W}\\
-                        &P_{Ero} = V \times I \; \unit{W}
+                        V &= - R \times I \; \unit{V}\\
+                        P_{Ass} &= - V \times I \; \unit{W}\\
+                        P_{Ero} &= V \times I \; \unit{W}
                     \end{align*}
                 \end{minipage}
 
@@ -168,8 +168,8 @@
                         %\vspace{-\baselineskip}
 
                         \begin{align*}
-                            &V_{Eq} = V_{CA}\\
-                            &R_{Eq} = \frac{1}{G_{Eq}}
+                            V_{Eq} &= V_{CA}\\
+                            R_{Eq} &= \frac{1}{G_{Eq}}
                         \end{align*}
 
                     \end{minipage}
@@ -192,8 +192,8 @@
                         %\vspace{-\baselineskip}
 
                         \begin{align*}
-                            &I_{Eq} = I_{CC}\\
-                            &G_{Eq} = \frac{1}{R_{Eq}}
+                            I_{Eq} &= I_{CC}\\
+                            G_{Eq} &= \frac{1}{R_{Eq}}
                         \end{align*}
 
                     \end{minipage}
@@ -217,8 +217,8 @@
             \vspace{.4cm}
 
             \begin{align*}
-                &V_1 = n \times V_2\\
-                &I_1 = -\frac{1}{n} \times I_2
+                V_1 &= n \times V_2\\
+                I_1 &= -\frac{1}{n} \times I_2
             \end{align*}
 
         \end{minipage}
@@ -549,8 +549,8 @@
             \subsubsection*{Resisori}
 
                 \begin{align*}
-                    &Z_R = R\\
-                    &Y_R = \frac{1}{R}
+                    Z_R &= R\\
+                    Y_R &= \frac{1}{R}
                 \end{align*}
 
             \vfill\null
@@ -559,8 +559,8 @@
             \subsubsection*{Condensatori}
 
                 \begin{align*}
-                    &Z_C = \frac{1}{j \omega C} = - \frac{1}{\omega C} \times j\\
-                    &Y_C = j \omega C
+                    Z_C &= \frac{1}{j \omega C} = - \frac{1}{\omega C} \times j\\
+                    Y_C &= j \omega C
                 \end{align*}
 
             \vfill\null
@@ -569,8 +569,8 @@
             \subsubsection*{Induttori}
 
                 \begin{align*}
-                    &Z_L = j \omega L\\
-                    &Y_L = \frac{1}{j \omega L} = -\frac{1}{\omega L} \times j
+                    Z_L &= j \omega L\\
+                    Y_L &= \frac{1}{j \omega L} = -\frac{1}{\omega L} \times j
                 \end{align*}
 
             \vfill\null
@@ -621,18 +621,18 @@
         \[
             \text{Tempo:}
             \left\{
-                \begin{gathered}
-                    v_1 (t) = L_1 \dv{i_1 (t)}{t} + M \dv{i_2 (t)}{t}\\
-                    v_2 (t) = M \dv{i_1 (t)}{t} + L_2 \dv{i_2 (t)}{t}
-                \end{gathered}
+                \begin{aligned}
+                    v_1 (t) &= L_1 \dv{i_1 (t)}{t} + M \dv{i_2 (t)}{t}\\
+                    v_2 (t) &= M \dv{i_1 (t)}{t} + L_2 \dv{i_2 (t)}{t}
+                \end{aligned}
             \right.
             \iff
             \text{Fasori:}
             \left\{
-                \begin{gathered}
-                    \overline{V}_1 = j \omega L_1 \overline{I}_1 + j \omega M \overline{I}_2\\
-                    \overline{V}_2 = j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
-                \end{gathered}
+                \begin{aligned}
+                    \overline{V}_1 &= j \omega L_1 \overline{I}_1 + j \omega M \overline{I}_2\\
+                    \overline{V}_2 &= j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
+                \end{aligned}
             \right.
             \qquad\qquad
             \underbrace{k}_{\text{coefficiente di accoppiamento}} = \frac{\abs{M}}{\sqrt{L_1 L_2}}
