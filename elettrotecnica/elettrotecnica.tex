@@ -70,11 +70,12 @@
 
             \vspace{-\baselineskip}
 
-            \subsubsection*{Carica di un condensatore}
+            %\vspace{-1.3cm}
 
-                \[
-                    W(t_0, t_1) = \frac{1}{2} C \left[v^2 (t_1) - v^2 (t_0)\right] \; \unit{J}
-                \]
+            %\subsubsection*{}
+            %\[
+            %    \Phi_B (t) = A(t) \times B(t)
+            %\]
 
         \end{minipage}
 
@@ -672,14 +673,14 @@
 
     \vspace{-3\baselineskip}
     \subsection*{Circuiti magnetici}
-    \vspace{-1.5\baselineskip}
+    \vspace{-1.45\baselineskip}
 
         \begin{gather*}
-            \Psi_B \text{: flusso attraveso la sezione} \qquad\qquad \Phi_B \text{: flusso concatenato con l'avvolgimento} \qquad\qquad v = L \, \dv{i}{t} \qquad \Phi_B = L I \rightarrow v = \dv{\Phi_B}{t}\\
+            \Psi_B \text{: flusso attraveso la sezione}, \, \Phi_B \text{: flusso concatenato con l'avvolgimento} \quad \Phi_B (t) = A(t) \times B(t) \qquad v = L \, \dv{i}{t}, \, \Phi_B = L I \rightarrow v = \dv{\Phi_B}{t}\\
             \Phi_B = n \, \Psi_B \qquad \mathcal{R} = \frac{l}{S \mu} \qquad \mu \text{: permeabilità magnetica} \qquad \mathcal{F} = \mathcal{R} \, \Psi_B \qquad \text{Equivalente ad un generatore di tensione con } V_{Eq} = n \, I
         \end{gather*}
 
-    \vspace{-1.5\baselineskip}
+    \vspace{-1.45\baselineskip}
     \subsection*{Induzione magnetica}
 
         \begin{minipage}[t]{.4\textwidth}
@@ -692,7 +693,7 @@
             \end{enumerate}
 
         \end{minipage}
-        \hspace{1cm}
+        \hspace{.6cm}
         \begin{minipage}[t]{.1\textwidth}
             \vspace{-1.75cm}
 
@@ -702,19 +703,29 @@
             \]
 
         \end{minipage}
-        \hspace{1cm}
+        \hspace{.6cm}
         \begin{minipage}[t]{.1\textwidth}
 
             \input{circuiti/induzione}
 
         \end{minipage}
-        \hspace{.5cm}
+        \hspace{.6cm}
         \begin{minipage}[t]{.3\textwidth}
-            \vspace{-1.3cm}
-            
-            \[
-                \Phi_B (t) = A(t) \times B(t)
-            \]
+            \vspace{-2cm}
+
+            \subsubsection*{Carica di un condensatore}
+
+                \[
+                    W(t_0, t_1) = \frac{1}{2} C \left[v^2 (t_1) - v^2 (t_0)\right] \; \unit{J}
+                \]
+
+            \vspace{-.5cm}
+
+            \subsubsection*{Carica di un induttore}
+
+                \[
+                    W(t_0, t_1) = \frac{1}{2} L \left[i^2 (t_1) - i^2 (t_0)\right] \; \unit{J}
+                \]
 
         \end{minipage}
 
