@@ -1,0 +1,303 @@
+\documentclass{article}
+
+\usepackage{hyperref, mathtools, amssymb, mathrsfs, polyglossia, amsthm, thmtools, units}
+
+\setmainlanguage{italian}
+
+\hypersetup{
+    unicode=true,
+    bookmarksnumbered=true,
+    bookmarksopen=false,
+    hidelinks
+}
+
+\title{Riassunto di probabilità}
+\author{Matti Martelli}
+\date{}
+
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\text{E}}
+\newcommand{\Var}{\text{Var}}
+
+\begin{document}
+    
+    \maketitle
+
+    \tableofcontents
+
+    \section{Formule importanti}
+
+        Lo spazio probabilistico è sempre \(\left(\Omega, \, \mathscr{F}, \, P\right)\) e gli eventi e relative intersezioni hanno
+        sempre probabilità al minimo nulla.
+    
+        \begin{definizione}[Formula delle probabilità totali]
+            \[
+                P(E) = \sum_{k = 1}^n P(E|F_k) \, P(F_k),
+            \]
+            dove \(\bigcup_{k = 1}^n F_k = \Omega\) e \(F_h \cap F_k = \varnothing\), \(\forall \, h \neq k\). 
+        \end{definizione}
+
+        \begin{definizione}[Formula di Bayes]
+            \[
+                P(F_h | E) = \frac{P(E | F_h)  \, P(F_h)}{\sum_{k = 1}^n P(E | F_k) \, P(F_k)},
+            \]
+            per \(h = 1, \, 2, \, \ldots, \, n\).
+        \end{definizione}
+
+        \begin{definizione}[Formula della moltiplicazione]
+            \[
+                P(E_1 \cap E_2 \cap \ldots \cap E_n) = P(E_1) \, P(E_2 | E_1) \, P(E_3 | E_1 \cap E_2) \ldots P(E_n | E_1 \cap E_2 \cap \ldots \cap E_{n - 1}).
+            \]
+        \end{definizione}
+
+        \begin{definizione}[Indipendenza]
+
+            Due eventi \(E\) e \(F\) sono indipendenti se
+
+            \[
+                P(E \cap F) = P(E) \, P(F).
+            \]
+
+            Ne deriva che, se indipendenti, \(P(E | F) = P(E)\) e viceversa. Per estenderlo a più eventi bisogna verificare la formula
+            per tutte le combinazioni, estendendola secondo necessità.
+        \end{definizione}
+
+    \section{Variabili aleatorie}
+
+        \begin{definizione}[Variabile aleatoria]
+            Una variabile aleatoria \(X\) è una funzione \(\Omega \to \R\) tale che, \(\forall \, x \in \R\),
+            \[
+                \left\{X \leqslant x\right\} \coloneqq \left\{\omega \in \Omega \; | \; X (\omega) \leqslant x\right\} \in \mathscr{F}.
+            \]
+        \end{definizione}
+
+        \subsection{Funzione di ripartizione}
+
+            \begin{definizione}[Funzione di ripartizione]
+                Si chiama \emph{funzione di ripartizione} di \(X\) la funzione \(F_X : \R \to [0, \, 1]\) definita come
+                \[
+                    F_X (x) \coloneqq P(X \leqslant x).
+                \]
+            \end{definizione}
+
+            Proprietà:
+            \begin{itemize}
+                \item \(F_X\) è una funzione monotona non decrescente;
+                \item \(F_X\) è continua da destra, cioè \(\lim_{x \to x_0^-} F_X (x) = F_X (x_0)\), \(\forall \, x_0 \in \R\);
+                \item \(\lim_{x \to -\infty} F_X (x) = 0\) e \(\lim_{x \to +\infty} F_X (x) = 1\).
+            \end{itemize}
+
+            Se abbiamo una funzione \(F : \R \to \R\) che soddisfa queste medesime proprietà essa è detta \emph{funzione di distribuzione}.
+        
+        \subsection{Variabili aleatorie discrete}
+
+            \begin{definizione}[Variabile aleatoria discreta]
+                Una variabile aleatoria è detta discreta quando può assumere valori su un insieme al più numerabile.
+            \end{definizione}
+
+            \begin{definizione}[Funzione di densità]
+                La funzione \(f_X\), alternativamente scritta come \(p_X\), definita come
+                \[
+                    f_X (x) \coloneqq P(X = x)
+                \]
+                è detta \emph{funzione di densità discreta} \(X\) o, semplicemente, densità discreta di \(X\).
+            \end{definizione}
+
+            Proprietà su un insieme \(S \coloneqq \left\{x_k \; | \; k \in I \subset \Z\right\}\):
+            \begin{itemize}
+                \item \(0 \leqslant f_X (x) \leqslant 1\) \(\forall \, x \in \R\) e \(f_X (x) = 0\) \(\forall \, x \not\in S\);
+                \item \(\sum_{k \in I} f_X (x_k) = 1\);
+                \item \(F_X (x) = \sum_{k : x_k \leqslant x} f_X (x_k)\);
+                \item \(f_X (x_k) = F_X (x_k) - F_X (x_{k - 1})\);
+                \item \(P (X \in B) = \sum_{k : x_k \in B} f_x (x_k)\), dove \(B \subset \R\).
+            \end{itemize}
+
+            \subsubsection{Distribuzione di Bernoulli}
+
+                Si utilizza per calcolare la probabilità di una singola prova di Bernoulli. Si indica come \(X \sim \mathbf{Be}(p)\),
+                dove \(p \in [0, \, 1]\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) =
+                        \begin{cases}
+                            1 - p & \text{se } x = 0\\
+                            p & \text{se } x = 1\\
+                            0 & \text{altrimenti}
+                        \end{cases}
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) =
+                        \begin{cases}
+                            0 & \text{se } x < 0\\
+                            1 - p & \text{se } 0 \leqslant x < 1\\
+                            1 & \text{se } x \geqslant 1
+                        \end{cases}
+                \]
+
+                Media: \(\E(X) = p\).
+
+                Varianza: \(\Var(X) = p (1 - p)\).
+
+            \subsubsection{Distribuzione binomiale}
+
+                Si utilizza per calcolare il numero di successi su \(n\) prove di Bernoulli. Si indica con \(X \sim \mathbf{Bi}(n, \, p)\),
+                dove \(n \in \N\) e \(p \in [0, \, 1]\). Nota: \(\mathbf{Bi}(1, \, p) = \mathbf{Be}(p)\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) =
+                        \begin{cases}
+                            \binom{n}{x} p^x {(1-p)}^{n - x} & \text{se } x = 0, \, \ldots, \, x\\
+                            0 & \text{altrimenti}
+                        \end{cases}
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = \sum_{k = 0}^x \binom{n}{k} p^k {(1-p)}^{n - k}.
+                \]
+
+                Media: \(\E(X) = np\).
+
+                Varianza: \(\Var(X) = np(1-p)\).
+
+            \subsubsection{Distribuzione geometrica}
+
+                Si utilizza per calcolare la probabilità che un successo avvenga dopo \(n\) tentativi. Si indica con \(X \sim \mathbf{Geom}(p)\),
+                dove \(p \in [0, \, 1]\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) =
+                        \begin{cases}
+                            p {(1-p)}^{x-1} & \text{se } x = 1, \, 2, \, \ldots\\
+                            0 & \text{altrimenti}
+                        \end{cases}
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = 1 - {(1-p)}^x.
+                \]
+
+                Media: \(\E (X) = p\).
+
+                Varianza: \(\Var(X) = \frac{1-p}{p^2}\).
+
+            \subsubsection{Distribuzione di Poisson}
+
+                Si utilizza per calcolare la probabilità per eventi successivi ed indipendenti, sapendo che se ne
+                verificano mediamente \(\lambda\). Si indica con \(X \sim \mathcal{P}(\lambda)\), con \(\lambda > 0\).
+                Nota: \(\mathbf{Bi}(n, \, \nicefrac{\lambda}{n}) \approx \mathcal{P}(\lambda)\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) = 
+                        \begin{cases}
+                            \frac{e^\lambda \lambda^x}{x!} & \text{se } x \in \{0, \, 1, \, 2, \, \ldots\}\\
+                            0 & \text{altrimenti}
+                        \end{cases}
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = \frac{\Gamma(x + 1, \, \lambda)}{x!}.
+                \]
+                dove
+                \[
+                    \Gamma(a, \, x) = \int_x^\infty \! e^{-t} \, t^{a-1} \; \mathrm{d}t.
+                \]
+
+                Media: \(\E(X) = \lambda\).
+
+                Varianza: \(\Var(X) = \lambda\).
+
+            \subsubsection{Distribuzione ipergeometrica}
+
+                Si utilizza per calcolare il numero di successi su \(n\) prove senza reinserimento. Si indica con
+                \(X \sim \mathbf{Iper}(b+r, \, r, \, n)\), dove \(b+r, \, r, \, n \in \N\). Nota: \(\mathbf{Iper}(b+r, \, r, \, 1) = \mathbf{Be}\left(\frac{r}{b+r}\right)\).
+
+                \smallskip
+
+                Funzione di densità:
+                \[
+                    f_X (x) = \frac{\binom{r}{x} \binom{b}{n-x}}{\binom{r+b}{n}}.
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = \sum_{k = 1}^x f_X (k).
+                \]
+
+                Media: \(\E(X) = \frac{rn}{b+r}\).
+
+                Varianza: \(\Var(X) = \frac{nbr}{{(b+r)}^2} \left(1-\frac{n-1}{b+r-1}\right)\).
+
+        \subsection{Variabili aleatorie assolutamente continue}
+
+            \begin{definizione}[Variabile aleatoria assolutamente continua]
+                Una variabile aletoria \(X\) si dice \emph{assolutamente continua} se esiste una funzione \(f_X : \R \to \R^+\)
+                integrabile, detta \emph{densità di \(X\)}, tale che
+                \[
+                    F_X (x) = \int_{-\infty}^x \! f_X (s) \; \mathrm{d}s.
+                \]
+            \end{definizione}
+
+            Proprietà:
+            \begin{itemize}
+                \item \(\int_\R f_X (x) \; \mathrm{d}x = 1\);
+                \item \(f_X (x) = F_X' (x)\), \(\forall \, x \in \R \; | \; \exists \, F_X' (x)\);
+                \item se \(-\infty < a < b < +\infty\) allora
+                    \[
+                        P \left(X \in (a, \, b)\right) = P \left(X \in (a, \, b]\right) = P \left(X \in [a, \, b)\right)
+                        = P \left(X \in [a, \, b]\right) = \int_a^b \! f_X (x) \; \mathrm{d}x.
+                    \]
+            \end{itemize}
+
+            \subsubsection{Distribuzione continua uniforme}
+
+                Si usa quando tutti gli eventi hanno la medesima probabilità di verificarsi. Si indica con \(X \sim \mathcal{U}(a, \, b)\)
+                in \(\left[a, \, b\right]\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) = \frac{1}{b - a}.
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = \frac{x - a}{b - a}.
+                \]
+
+                Media: \(\E(X) = \frac{a+b}{2}\).
+
+                Varianza: \(\Var(X) = \frac{{(b - a)}^2}{12}\).
+
+            \subsubsection{Distribuzione esponenziale}
+
+                Analogo continuo della distribuzione geometrica. Si indica con \(X \sim \varepsilon(\lambda)\), con
+                \(\lambda > 0\).
+
+                Funzione di densità:
+                \[
+                    f_X (x) = \lambda \, e^{-\lambda \, x}.
+                \]
+
+                Funzione di ripartizione:
+                \[
+                    F_X (x) = 1 - e^{-\lambda \, x}.
+                \]
+
+                Media: \(\E(X) = \nicefrac{1}{\lambda}\).
+
+                Varianza: \(\Var(X) = \nicefrac{1}{\lambda^2}\).
+
+\end{document}
